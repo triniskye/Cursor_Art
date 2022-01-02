@@ -3,6 +3,7 @@
     text-align: center;
     position: relative;
 }
+/*Title*/
 h1{
     background-image: linear-gradient(to right, #43c6ac, thistle, #2f6ece, #191654);
     background-size: 300%;
@@ -32,6 +33,7 @@ h1{
         background-position: left;
     }
 }
+/*Canvas*/
 #canvas{
     border-width: .5vw;
     border-style: solid;
@@ -56,8 +58,7 @@ h1{
   inherits: false;
 }
     
-
-
+/*Clear Button*/
 button{
     position: absolute;
     top: 82.5vh;
@@ -75,8 +76,6 @@ button:focus{
     cursor: pointer;
     animation: glow 3s linear infinite;
 }
-
-
 @keyframes glow {
     0%{
         box-shadow: 0 0 0 0 ;
@@ -90,14 +89,13 @@ button:focus{
     }
     
 }
-
+/*Colour Selector*/
 .colourSelector{
     position: absolute;
 }
 #red, #orange, #yellow, #greenyellow, #lightskyblue, #mediumpurple, #pink{
     width: 4vw;
     height: 4vw;
-    background-color: chartreuse;
     position: absolute;
     left: 5vw;
     margin-bottom: 0.25vh;
@@ -133,4 +131,37 @@ button:focus{
 #pink{
     top: 60vh;
     background-color: pink;
+}
+/*Size Selector*/
+.sizeSelector{
+    position: absolute;
+}
+#xs, #s, #m, #l, #xl{
+    background-color: rgb(107, 205, 218);
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 40vw;
+    margin-bottom: 0.25vh;
+    top: 62vh;
+    border-radius: 100%;
+
+}
+#xs{
+    border-style: solid;
+    border-image: conic-gradient(from var(--angle), white, black, white, black) 1;
+    animation: 5s rotate linear infinite;
+
+}
+#s{
+    left: 50vw;
+}
+#m{
+    left: 60vw;
+}
+#l{
+    left: 70vw;
+}
+#xl{
+    left: 80vw;
 }
