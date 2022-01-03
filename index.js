@@ -1,3 +1,8 @@
+//instructions
+addEventListener("DOMContentLoaded", ()=>{
+    alert("To draw, click on the canvas and move mouse. To stop drawing, click again.")
+})
+
 //canvas
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
