@@ -11,11 +11,14 @@ const purple = document.getElementById('mediumpurple')
 const pink = document.getElementById('pink')
 const allColours = [red, orange, yellow, green, blue, purple, pink]
 let draw = false;
+
+
 canvas.addEventListener('click', ()=>{
     draw === false ? draw = true : draw = false
 })
 canvas.addEventListener('mousemove', function(e){
     if(draw === true){
+        eraser = false;
         const r = e.target.getBoundingClientRect();
         scaleX = canvas.width / r.width;
         scaleY = canvas.height / r.height;
@@ -28,6 +31,7 @@ canvas.addEventListener('mousemove', function(e){
     }
     else{
         draw = false
+        
     }
 
   
@@ -39,6 +43,35 @@ button.addEventListener('click', (e)=>{
     e.preventDefault()
     ctx.clearRect(0,0, canvas.width, canvas.height)
     e.target.blur()
+})
+
+//eraser
+let eraser = false;
+const eraserButton = document.querySelector(".eraser")
+eraserButton.addEventListener('click', ()=>{
+    if(eraser === false){
+        eraser = true;
+        draw = false;
+        canvas.addEventListener('mousemove', function(e){
+            if (eraser === true){
+                const r = e.target.getBoundingClientRect();
+                scaleX = canvas.width / r.width;
+                scaleY = canvas.height / r.height;
+                let mouse = {
+                    x: (e.clientX - r.left) * scaleX,
+                    y: (e.clientY - r.top) * scaleY
+                  }
+                ctx.clearRect(mouse.x, mouse.y, x, y);
+            }
+            else{
+                eraser = false
+            }
+               
+        })}
+    else{
+        eraser = false;
+        
+    }
 })
 
 

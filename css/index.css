@@ -173,3 +173,12 @@ button:focus{
     width: 4vw;
     height: 4vw;
 }
+/*eraser*/
+.eraser{
+    position: absolute;
+    font-weight: 100;
+    color: azure; 
+    left: 85vw;
+    top: 9vh;   
+    cursor: pointer;
+}
