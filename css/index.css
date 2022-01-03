@@ -74,7 +74,7 @@ button:hover,
 button:focus{
     border-radius: 15px;
     cursor: pointer;
-    animation: glow 3s linear infinite;
+    animation: glow 2s linear infinite;
 }
 @keyframes glow {
     0%{
@@ -92,6 +92,7 @@ button:focus{
 /*Colour Selector*/
 .colourSelector{
     position: absolute;
+    cursor: pointer;
 }
 #red, #orange, #yellow, #greenyellow, #lightskyblue, #mediumpurple, #pink{
     width: 4vw;
@@ -132,14 +133,14 @@ button:focus{
     top: 60vh;
     background-color: pink;
 }
+
 /*Size Selector*/
 .sizeSelector{
     position: absolute;
+    cursor: pointer;
 }
 #xs, #s, #m, #l, #xl{
     background-color: rgb(107, 205, 218);
-    width: 4vw;
-    height: 4vw;
     position: absolute;
     left: 40vw;
     margin-bottom: 0.25vh;
@@ -148,20 +149,27 @@ button:focus{
 
 }
 #xs{
-    border-style: solid;
-    border-image: conic-gradient(from var(--angle), white, black, white, black) 1;
-    animation: 5s rotate linear infinite;
+    width: 2vw;
+    height: 2vw;
 
 }
 #s{
     left: 50vw;
+    width: 2.5vw;
+    height: 2.5vw;
 }
 #m{
     left: 60vw;
+    width: 3vw;
+    height: 3vw;
 }
 #l{
     left: 70vw;
+    width: 3.5vw;
+    height: 3.5vw;
 }
 #xl{
     left: 80vw;
+    width: 4vw;
+    height: 4vw;
 }

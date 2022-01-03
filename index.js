@@ -24,7 +24,7 @@ canvas.addEventListener('mousemove', function(e){
             y: (e.clientY - r.top) * scaleY
           }
         ctx.fillStyle = myColor;
-        ctx.fillRect(mouse.x, mouse.y, 5, 10);
+        ctx.fillRect(mouse.x, mouse.y, x, y);
     }
     else{
         draw = false
@@ -69,6 +69,65 @@ function changeColour(){
     })
 }
 
+//size selector
+const xs = document.querySelector("#xs");
+const s = document.querySelector("#s");
+const m = document.querySelector("#m");
+const l = document.querySelector("#l");
+const xl = document.querySelector("#xl");
+allSizes = [xs, s, m, l, xl]
+let mySize = m
+sizeChange(mySize)
+function sizeChange(size){
+    allSizes.forEach((element)=>{
+        if (element === size){
+            element.style.borderStyle = 'solid'
+            element.style.borderImage = 'conic-gradient(from var(--angle), rgb(56, 197, 126), rgb(250, 248, 248), rgb(245, 87, 205), rgb(59, 88, 250)) 1'
+            element.style.animation = '5s rotate linear infinite'
+        }
+        else{
+            element.style.borderStyle = 'none'
+            element.style.borderImage = 'none'
+            element.style.animation = 'none'
+        }
+    })
 
-
+}
+let x = 5
+let y = 10
+const sizeSelector = document.querySelector(".sizeSelector")
+sizeSelector.addEventListener('click', (e)=>{
+    switch(e.target.id){
+        case "xs":
+            mySize = xs
+            sizeChange(xs)
+            x = 4
+            y = 6
+            break;
+        case "s":
+            mySize = s
+            sizeChange(s)
+            x = 6
+            y = 8
+            break;
+        case "m":
+            mySize = m
+            sizeChange(m)
+            x = 8
+            y = 10
+            break;
+        case "l":
+            mySize = l 
+            sizeChange(l)
+            x = 10
+            y = 12   
+            break;
+        case "xl":
+            mySize = xl
+            sizeChange(xl)
+            x = 12
+            y = 14
+            break;
+    }
+})
 
